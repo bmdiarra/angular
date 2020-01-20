@@ -35,7 +35,7 @@ export class BudgetFormComponent implements OnInit {
     const montant = this.budgetForm.get('montant').value;
     const description = this.budgetForm.get('description').value;
     const newBudget = new Budget(date, type, montant, description);
-    console.log(newBudget);
+    //console.log(newBudget);
     this.budgetsService.createNewBudget(newBudget);
     this.router.navigate(['/budgets']);
   }

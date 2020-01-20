@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-xs-12">
+      <h2>Mon Budget</h2>
+      <div class="list-group">
+        <button
+          class="list-group-item"
+          *ngFor="let monbud of monbudget; let i = index"
+          (click)="onViewBudget(i)">
+          <h3 class="list-group-item-heading">
+            {{ monbud.nom }}
+            <button class="btn btn-default pull-right" (click)="onDeleteBudget(budget)">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+          </h3>
+          <p class="list-group-item-text">{{ monbud.prenom }}</p>
+          <p class="list-group-item-text">{{ monbud.montant }}</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Declaration de budget</h2>
+      <form [formGroup]="monbudgetForm" (ngSubmit)="onSaveMonbudget()">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="nom" id="nom"
+                 class="form-control" formControlName="nom">
+        </div>
+        <div class="form-group">
+          <label for="type">Prenom</label>
+          <input type="prenom" id="prenom"
+                 class="form-control" formControlName="prenom">
+        </div>
+        <div class="form-group">
+            <label for="montant">montant</label>
+            <input type="text" id="montant"
+                   class="form-control" formControlName="montant">
+          </div>
+
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" id="email"
+                   class="form-control" formControlName="email">
+          </div>
+        
+        <button class="btn btn-success" [disabled]="monbudgetForm.invalid"
+                type="submit">Enregistrer mon budget
+        </button>
+  
+      </form>
+    </div>
+  </div>
