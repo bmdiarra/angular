@@ -39,5 +39,6 @@ export class BudgetFormComponent implements OnInit {
     this.budgetsService.createNewBudget(newBudget);
     this.router.navigate(['/budgets']);
   }
+
 }
 

@@ -16,11 +16,13 @@ import { Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { BudgetService } from './services/budget.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { MonbudgetComponent } from './monbudget/monbudget.component';
 
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signin', component: SigninComponent },
   { path: 'budgets',canActivate: [AuthGuardService], component: BugdetListComponent },
+  { path: 'monbudget',canActivate: [AuthGuardService], component: MonbudgetComponent },
   { path: 'budgets/new', canActivate: [AuthGuardService], component: BudgetFormComponent },
   { path: 'budgets/view/:id', canActivate: [AuthGuardService], component: SingleBudgetComponent },
   { path: '', redirectTo: 'budgets', pathMatch: 'full' },
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     BugdetListComponent,
     BudgetFormComponent,
     SingleBudgetComponent,
-    HeaderComponent
+    HeaderComponent,
+    MonbudgetComponent
   ],
   imports: [
     BrowserModule,

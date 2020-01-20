@@ -23,6 +23,7 @@ export class BugdetListComponent implements OnInit, OnDestroy {
       }
     );
     this.budgetsService.emitBudgets();
+    console.log(this.budgets);
   }
 
   onNewBudget() {
