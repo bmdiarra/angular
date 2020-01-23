@@ -1,0 +1,19 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': postLove > 0,
+'list-group-item-danger': postLove < 0 }">
+    
+    <h4>Post : {{ postName }} </h4>
+    
+    <p> {{postContent}} </p>
+    <div class="row">
+        <div class="col-md-4">    
+            <button class="btn btn-sm btn-success" (click)="onLoveClick()" style="margin: 2px;">love it</button>
+            <button class="btn btn-sm btn-danger"  (click)="offLoveClick()">dont't love it</button>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+                <button class="btn btn-sm btn-danger" style="margin-top: 7px; margin-right: 2px;" (click)="console()" routerLink="modifie">Modifier post</button>
+                <button class="btn btn-sm btn-danger" style="margin-top: 7px;" (click)="onDeletePost()">Supprimer post</button>
+        </div>
+    </div>
+</li>

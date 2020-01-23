@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="post">Blog</a></li>
+        <li routerLinkActive="active"><a routerLink="new">Ajouter Post</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <h2>Mes posts</h2>
+      <ul class="list-group">
+        <router-outlet></router-outlet>
+        
+      </ul>
+    </div>
+  </div>
+</div>

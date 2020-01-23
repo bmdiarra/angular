@@ -1,0 +1,8 @@
+<app-post-list-item *ngFor="let post of Posts; let i = index"
+                    [post]="post"
+                    [postName]="post.title"
+                    [postContent]="post.content"
+                    [postLove]="post.loveIts"
+                    [index]="i"
+                    [id]="post.id"></app-post-list-item>
+
