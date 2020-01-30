@@ -75,6 +75,7 @@ posts: any[];
       //this.emitPostSubject();
   }
 
+
   removePost( posts) {
     
     const postIndexToRemove = this.Posts.findIndex(

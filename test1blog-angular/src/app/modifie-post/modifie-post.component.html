@@ -2,6 +2,11 @@
     <div class="col-sm-8 col-sm-offset-2">
       <form (ngSubmit)="onModifie(f)" #f="ngForm">
         <div class="form-group">
+          <label for="Id">
+            Id
+          </label>
+          <input type="id" id="id" name="id" class="form-control" ngModel required>
+          
           <label for="Titre">
             Titre
           </label>

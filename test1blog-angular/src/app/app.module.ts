@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'post', component: PostListComponent },
   { path: 'new', component: NewPostComponent },
   { path: 'modifie', component: ModifiePostComponent },
+  { path: 'modifie/:id', component: ModifiePostComponent },
   { path: '', component: PostListComponent },
   { path: 'not-found', component: PostListComponent },
   { path: '**', redirectTo: 'not-found' }

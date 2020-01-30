@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import {PostService} from '../services/post.service';
 import { Post } from '../models/post.model';
+import { Router } from '@angular/router';
 //export let i: number ;
-export const i = 0 ;
+//export const i = 0 ;
 
 
 
@@ -17,19 +18,19 @@ export class PostListItemComponent implements OnInit {
   @Input() postContent: string ;
   @Input() postLove: number ;
   @Input() index: number;
-  i = this.index;
+  //i = this.index;
   
   //@Output()  i = this.index ;  
   Post: any[]; 
   posts: Post[];
 
-  constructor(private postService: PostService) {  }
+  constructor(private postService: PostService, private route: Router) {  }
 
-  console(){
-    alert(i); 
+  router(){
+    //let i = this.index;
+    this.route.navigate(['/modifie', this.index]);
   }
 
-  
   
   ngOnInit() {
     this.Post = this.postService.Posts;
@@ -44,16 +45,10 @@ export class PostListItemComponent implements OnInit {
     this.postService.offLoveit(this.index);
   }
 
-  
-  
-
   onDeletePost(/*post: Post*/) {
     //console.log(this.post);
     this.postService.removePost(this.post);
   }
-
-
-
 
 }
 
